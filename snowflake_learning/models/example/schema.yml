@@ -1,0 +1,34 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: mart_customers_by_country
+    description: "A mart model that aggregates customers by country"
+    columns:
+      - name: country
+        description: "The country of the customer"
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_count
+        description: "The number of customers in each country"
+        data_tests:
+          - not_null
